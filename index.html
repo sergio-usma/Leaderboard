@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leaderboard</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+  <body>
+    <main>
+      <div class="leaderboard">
+        <h1 class="leaderboard__title content__header">🎉 Leaderboard 🏆️</h1>
+
+        <div class="leaderboard__wrapper">
+          <div class="leaderboard__wrapper__scores">
+            <div class="leaderboard__wrapper__scores__header">
+              <h2 class="leaderboard__wrapper__scores__header__title">
+                Recent scores
+              </h2>
+              <button
+                class="leaderboard__wrapper__scores__header__btn"
+                type="button"
+              >
+                Refresh
+              </button>
+            </div>
+
+            <div class="leaderboard__wrapper__scores__list"></div>
+          </div>
+
+          <div class="leaderboard__wrapper__add">
+            <div class="leaderboard__wrapper__add__header content__header">
+              <h2
+                class="leaderboard__wrapper__add__header__title content__title"
+              >
+                Add your score
+              </h2>
+            </div>
+
+            <div class="leaderboard__wrapper__add__form content__div">
+              <form action="">
+                <label class="hidden" for="name">Name:</label>
+                <input
+                  class="leaderboard__wrapper__add__form__name-input form__input"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Enter your name"
+                />
+                <label class="hidden" for="score">Score:</label>
+                <input
+                  class="leaderboard__wrapper__add__form__score-input form__input"
+                  type="number"
+                  name="score"
+                  id="score"
+                  placeholder="Enter your score"
+                />
+                <input
+                  class="leaderboard__wrapper__add__form__btn content__btn"
+                  type="submit"
+                  value="Submit"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./index.js" type="module"></script>
+    <script src="./modules/scoresClass.js" type="module"></script>
+  </body>
+</html>
