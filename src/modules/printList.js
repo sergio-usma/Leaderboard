@@ -3,7 +3,7 @@ function printList(getScores) {
     '.leaderboard__wrapper__scores__list',
   );
   const emptyList = document.createElement('h3');
-  if (getScores.length === 0) {
+  if (getScores.length === 0 || !getScores) {
     leaderboardList.innerHTML = '';
     emptyList.classList.add('leaderboard__wrapper__scores__list--empty');
     emptyList.innerHTML = 'No scores to show';
@@ -14,12 +14,14 @@ function printList(getScores) {
   table.classList.add('leaderboard__wrapper__scores__list__table');
   leaderboardList.innerHTML = '';
 
-  getScores.forEach((item) => {
+  const sortedScores = getScores.sort((a, b) => b.user.localeCompare(b.user));
+
+  sortedScores.forEach((item) => {
     const tableRow = document.createElement('tr');
     tableRow.classList.add('leaderboard__wrapper__scores__list__table__row');
     tableRow.innerHTML = `
         <tr class="leaderboard__wrapper__scores__list__table__row">
-          <td>${item.name}: </td>
+          <td>${item.user}: </td>
           <td>${item.score}</td>
         </tr>`;
     table.appendChild(tableRow);

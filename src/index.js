@@ -1,35 +1,27 @@
-import printList from './modules/printList.js';
-import Scores from './modules/scoresClass.js';
 import './style.css';
+import getData from './modules/getData.js';
+import setData from './modules/setData.js';
 
-const addScoreBtn = document.querySelector(
-  '.leaderboard__wrapper__add__form__btn',
-);
-const clearScoresBtn = document.querySelector(
+const addScoreForm = document.querySelector('form');
+const updateScoresBtn = document.querySelector(
   '.leaderboard__wrapper__scores__header__btn',
 );
-let getScores = localStorage.getItem('recentScores')
-  ? JSON.parse(localStorage.getItem('recentScores'))
-  : [];
+const nameInput = document.querySelector(
+  '.leaderboard__wrapper__add__form__name-input',
+);
+const scoreInput = document.querySelector(
+  '.leaderboard__wrapper__add__form__score-input',
+);
 
-printList(getScores);
+getData();
 
-addScoreBtn.addEventListener('click', (e) => {
+addScoreForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const name = document.querySelector(
-    '.leaderboard__wrapper__add__form__name-input',
-  ).value;
-  const score = document.querySelector(
-    '.leaderboard__wrapper__add__form__score-input',
-  ).value;
-
-  const newScore = new Scores(name, score);
-  newScore.addScore();
+  getData();
+  setData(nameInput.value, scoreInput.value);
+  addScoreForm.reset();
 });
 
-clearScoresBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  localStorage.clear();
-  getScores = [];
-  printList(getScores);
+updateScoresBtn.addEventListener('click', () => {
+  getData();
 });
