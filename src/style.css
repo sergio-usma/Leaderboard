@@ -1,7 +1,216 @@
-.hello {
-  color: red;
-  background: url('../assets/logo.png');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+/** ===================
+ *  Main
+ ===================== */
+
+main {
+  height: auto;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/img/space-bg.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
-  background-position: left;
+  background-attachment: fixed;
+}
+
+.leaderboard {
+  width: 90vw;
+  max-width: 144rem;
+  padding: 2rem;
+}
+
+.leaderboard__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.leaderboard__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4%;
+}
+
+.leaderboard__wrapper__scores {
+  flex-basis: 100%;
+}
+
+.leaderboard__wrapper__scores__header,
+.content__header {
+  min-height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.75);
+}
+
+.leaderboard__wrapper__scores__header__title,
+.content__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.leaderboard__wrapper__scores__header__btn,
+.content__btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #000;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.leaderboard__wrapper__scores__list,
+.content__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 10rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.75);
+}
+
+.leaderboard__wrapper__scores__list--empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+
+.leaderboard__wrapper__scores__list__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboard__wrapper__scores__list__table__row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.leaderboard__wrapper__scores__list__table__row:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.leaderboard__wrapper__scores__list__table__row:nth-child(odd) {
+  color: #fff;
+  background-color: rgba(143, 60, 168, 0.5);
+}
+
+.leaderboard__wrapper__scores__list__table__row:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.leaderboard__wrapper__scores__list__table__row:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.leaderboard__wrapper__add {
+  min-height: 30rem;
+  flex-basis: 100%;
+}
+
+.leaderboard__wrapper__add__form {
+  padding: 2rem;
+}
+
+.leaderboard__wrapper__add__form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.leaderboard__wrapper__add__form__btn {
+  align-self: flex-end;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .leaderboard__title {
+    font-size: 4rem;
+  }
+
+  .leaderboard__wrapper__scores__header__title,
+  .content__title {
+    font-size: 2.2rem;
+  }
+
+  .leaderboard__wrapper__scores {
+    flex-basis: 58%;
+  }
+
+  .leaderboard__wrapper__add {
+    flex-basis: 38%;
+  }
 }
