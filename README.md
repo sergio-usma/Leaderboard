@@ -141,7 +141,7 @@ npm run deploy
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Integration with API service**
+- [X] **Integration with API service**
 - [ ] **Best UI/UX**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

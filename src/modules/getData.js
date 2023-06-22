@@ -10,8 +10,3 @@ const getData = async () => {
 };
 
 export default getData;
-
-/* https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/lnOTY3pQ8ZWWUEXQqBlg/scores/
-
-  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/okkSssC9uAqE8X1UsrEQ/scores/',
-*/
