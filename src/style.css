@@ -6,13 +6,13 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
-  overflow-x: hidden;
 }
 
 a {
@@ -34,7 +34,7 @@ main {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background-image: url('./assets/img/space-bg.jpg');
   background-repeat: no-repeat;
@@ -71,6 +71,17 @@ main {
 
 .leaderboard__wrapper__scores {
   flex-basis: 100%;
+  animation: fadeInLeft 0.7s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .leaderboard__wrapper__scores__header,
@@ -164,6 +175,17 @@ main {
 .leaderboard__wrapper__add {
   min-height: 30rem;
   flex-basis: 100%;
+  animation: fadeInRight 0.7s ease-in-out;
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .leaderboard__wrapper__add__form {
