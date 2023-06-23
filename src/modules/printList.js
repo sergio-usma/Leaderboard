@@ -14,7 +14,7 @@ function printList(getScores) {
   table.classList.add('leaderboard__wrapper__scores__list__table');
   leaderboardList.innerHTML = '';
 
-  const sortedScores = getScores.sort((a, b) => b.user.localeCompare(b.user));
+  const sortedScores = getScores.sort((a, b) => a.user.localeCompare(b.user));
 
   sortedScores.forEach((item) => {
     const tableRow = document.createElement('tr');
